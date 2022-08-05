@@ -7,10 +7,7 @@
       rel="canonical"
       href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/"
     />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width" />
     <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -99,6 +96,18 @@
       custom-element="amp-ad"
       src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
     ></script>
+    <!-- for audio -->
+    <script
+      async
+      custom-element="amp-audio"
+      src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"
+    ></script>
+    <!-- for facebook audio video -->
+    <script
+      async
+      custom-element="amp-facebook"
+      src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"
+    ></script>
     <!-- for ambed youtube video -->
     <script
       async
@@ -111,13 +120,53 @@
       custom-element="amp-twitter"
       src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
     ></script>
+    <!-- for adding iframes -->
+    <script
+      async
+      custom-element="amp-iframe"
+      src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"
+    ></script>
     <!-- for highlight quote -->
     <script
       async
       custom-element="amp-fit-text"
       src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
     ></script>
-
+    <!-- for accordion -->
+    <script
+      async
+      custom-element="amp-accordion"
+      src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+    ></script>
+    <!-- for adding form -->
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+    <!-- for date picking -->
+    <script
+      async
+      custom-element="amp-date-picker"
+      src="https://cdn.ampproject.org/v0/amp-date-picker-0.1.js"
+    ></script>
+    <!-- stateful interactivity -->
+    <script
+      async
+      custom-element="amp-bind"
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
+    <!-- for adding list -->
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <script
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+      async
+    ></script>
     <!-- for css styling -->
     <style amp-custom>
       body {
@@ -175,11 +224,24 @@
         font-size: 1.5em;
         padding-left: 5px;
       }
+      .border {
+        border-style: dotted;
+      }
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+      .border {
+        border-style: dotted;
+      }
     </style>
   </head>
 
   <body>
     <!-- Navigate with a sidebar -->
+    <h1>Navigate with a sidebar</h1>
     <header class="headerbar">
       <div
         role="button"
@@ -212,6 +274,7 @@
 
     <h1 id="hello">Hello AMPHTML World!</h1>
     <!-- include APM Image -->
+    <h1>including APM Image</h1>
     <div>
       <amp-img
         src="https://source.unsplash.com/random/600x400"
@@ -221,42 +284,9 @@
         class="header-img"
       ></amp-img>
     </div>
-    <!-- Play with AMP components -->
-    <div>
-      <amp-base-carousel
-        loop="true"
-        width="600"
-        height="400"
-        layout="responsive"
-        type="carousel"
-      >
-        <amp-img
-          src="https://source.unsplash.com/Ji_G7Bu1MoM/600x400"
-          width="600"
-          height="400"
-          layout="responsive"
-        ></amp-img>
-        <amp-img
-          src="https://source.unsplash.com/4yCXNMLP9g8/600x400"
-          width="600"
-          height="400"
-          layout="responsive"
-        ></amp-img>
-        <amp-img
-          src="https://source.unsplash.com/4yCXNMLP9g8/600x400"
-          width="600"
-          height="400"
-          layout="responsive"
-        ></amp-img>
-      </amp-base-carousel>
-    </div>
-    <!-- Actions and event -->
-    <div>
-      <button on="tap:hideItem.hide">Hide H1</button>
-      <h2 id="hideItem">Goodbye AMPHTML World!</h2>
-      <button on="tap:hideItem.show">Show H1</button>
-    </div>
+
     <!-- AMP Monetize with ads -->
+    <h1>AMP Monetize with ads</h1>
     <div>
       <amp-ad
         width="300"
@@ -274,6 +304,16 @@
         data-aax_size="300x250"
         data-aax_pubname="test123"
         data-aax_src="302"
+      >
+      </amp-ad>
+      <amp-ad
+        width="300"
+        height="250"
+        type="a9"
+        data-amzn_assoc_ad_mode="auto"
+        data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+        data-recomtype="async"
+        data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
       >
       </amp-ad>
     </div>
@@ -300,7 +340,25 @@
         </div>
       </amp-ad>
     </div>
+    <!-- displaying facebook post video -->
+    <h1>displaying facebook post video</h1>
+    <amp-facebook
+      width="486"
+      height="657"
+      layout="responsive"
+      data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+    >
+    </amp-facebook>
+    <amp-facebook
+      width="476"
+      height="316"
+      layout="responsive"
+      data-embed-as="video"
+      data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+    >
+    </amp-facebook>
     <!-- Embed  youTube video -->
+    <h1>Embed youTube video with fallback.</h1>
     <div>
       <amp-youtube
         data-videoid="vOdW8JsmB5c"
@@ -313,7 +371,25 @@
         </div>
       </amp-youtube>
     </div>
+    <!-- Playing audio -->
+    <h1>Playing audio</h1>
+    <div>
+      <amp-audio
+        width="400"
+        height="200"
+        src="https://gaana.com/song/one-and-only-110"
+      >
+        <div fallback>
+          <p>Your browser doesn’t support HTML5 audio.</p>
+        </div>
+        <source
+          type="audio/mpeg"
+          src="https://gaana.com/song/one-and-only-110"
+        />
+      </amp-audio>
+    </div>
     <!-- Displaying Tweet -->
+    <h1>Displaying Tweet</h1>
     <div>
       <amp-twitter
         width="486"
@@ -323,7 +399,31 @@
       >
       </amp-twitter>
     </div>
+    <!-- Include iframes -->
+    <h1>Include iframes</h1>
+    <div>
+      <amp-iframe
+        width="200"
+        height="100"
+        sandbox="allow-scripts allow-same-origin"
+        layout="responsive"
+        src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+      >
+        <div
+          fallback
+          style="
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          Could not load map from google
+        </div>
+      </amp-iframe>
+    </div>
     <!-- Highlighting  quote -->
+    <h1>Highlighting quote</h1>
     <div>
       <amp-fit-text
         width="400"
@@ -355,6 +455,7 @@
       </amp-fit-text>
     </div>
     <!-- AMP carousel -->
+    <h1>AMP carousel</h1>
     <div>
       <amp-carousel
         layout="responsive"
@@ -386,6 +487,7 @@
       </amp-carousel>
     </div>
     <!-- AMP mixed carousel content -->
+    <h1>AMP mixed carousel content</h1>
     <div>
       <amp-carousel layout="fixed-height" height="250" type="carousel">
         <amp-img
@@ -424,6 +526,7 @@
       </div>
     </amp-img>
     <!-- media query -->
+    <h1>Media query</h1>
     <div>
       <amp-img
         media="(max-width: 650px)"
@@ -461,6 +564,7 @@
       </amp-anim>
     </div>
     <!-- AMP HTML Responsive Attributes -->
+    <h1>AMP HTML Responsive Attributes</h1>
     <div>
       <amp-component
         attr-name="(min-width: 1000px) valueOne, (min-width: 600px) valueTwo, defaultValue"
@@ -499,6 +603,7 @@
       </amp-base-carousel>
     </div>
     <!-- video in AMP -->
+    <h1>video in AMP</h1>
     <div>
       <amp-video
         controls
@@ -520,6 +625,329 @@
           <p>This browser does not support the video element.</p>
         </div>
       </amp-video>
+    </div>
+    <!-- AMP srcset img-->
+    <h1>AMP srcset img</h1>
+    <div>
+      <amp-img
+        alt="apple"
+        src="https://source.unsplash.com/random/600x400"
+        height="596"
+        width="900"
+        srcset="https://source.unsplash.com/random/600x400 900w,
+            /https://source.unsplash.com/random/600x400 800w,
+            /https://source.unsplash.com/random/600x400 700w,
+            /https://source.unsplash.com/random/600x400 600w,
+            /https://source.unsplash.com/random/600x400 500w,
+            /https://source.unsplash.com/random/600x400 400w"
+        sizes="(max-width: 500px) 100vw,
+            (max-width: 900px) 75vw, 600px"
+      >
+      </amp-img>
+      <!-- img heigh -->
+      <amp-img
+        alt="AMP"
+        src="https://source.unsplash.com/random/600x400"
+        width="320"
+        height="256"
+        heights="(min-width:500px) 200px, 80%"
+      >
+      </amp-img>
+    </div>
+    <!-- Changing the art direction of an image -->
+    <h1>Changing the art direction of an image</h1>
+    <div>
+      <amp-img
+        alt="grey cat"
+        media="(min-width: 670px)"
+        width="650"
+        height="340"
+        src="/https://source.unsplash.com/Ji_G7Bu1MoM/600x400"
+      ></amp-img>
+      <amp-img
+        alt="grey cat"
+        media="(min-width: 470px) and (max-width: 669px)"
+        width="450"
+        height="340"
+        src="https://source.unsplash.com/4yCXNMLP9g8/600x400"
+      ></amp-img>
+      <amp-img
+        alt="grey cat"
+        media="(max-width: 469px)"
+        width="226"
+        height="340"
+        src="https://source.unsplash.com/random/600x400"
+      ></amp-img>
+    </div>
+    <div>
+      <!-- Actions and event -->
+      <h1>Event listeners and event handling</h1>
+      <div>
+        <h1>AMP events</h1>
+        <button on="tap:hideItem.hide">Hide H1</button>
+        <h4 id="hideItem">Goodbye AMPHTML World!</h4>
+        <button on="tap:hideItem.show">Show H1</button>
+      </div>
+      <div>
+        <input
+          on="tap:hiddenInstructions.show;change:hiddenInstructions.hide"
+          tabindex="0"
+          role="textbox"
+          type="text"
+        />
+        <input type="submit" value="Submit" />
+        <p hidden id="hiddenInstructions">Type your name!</p>
+      </div>
+      <!-- <h1>AMP Action</h1> -->
+      <h4 id="helloHeading">Hello AMP World!</h4>
+      <h4 id="goodbyeHeading" hidden>Goodbye AMP World!</h4>
+      <button on="tap:helloHeading.hide,goodbyeHeading.show">
+        Goodbye World
+      </button>
+      <h1>Toggle element</h1>
+      <div>
+        <button
+          on="tap:sweetImage.toggleVisibility,savoryImage.toggleVisibility"
+        >
+          Toggle Sweet and Savory
+        </button>
+        <amp-img
+          hidden
+          id="savoryImage"
+          layout="responsive"
+          width="300"
+          height="200"
+          src="https://amp.dev/static/samples/img/image3.jpg"
+          alt="Photo of savory sushi"
+        ></amp-img>
+        <amp-img
+          id="sweetImage"
+          layout="responsive"
+          width="300"
+          height="200"
+          src="https://amp.dev/static/samples/img/image2.jpg"
+          alt="Photo of a sweet cupcakes"
+        ></amp-img>
+      </div>
+    </div>
+    <!-- Add, remove and toggle CSS classes -->
+    <h1>Add, remove and toggle CSS classes</h1>
+    <div>
+      <h1 id="borderHeading">Toggle my border!</h1>
+      <button on="tap:borderHeading.toggleClass(class='border')">
+        Toggle Border
+      </button>
+    </div>
+    <div>
+      <h1 id="togleHeading">Hello AMP World!</h1>
+      <button
+        on="tap:togleHeading.toggleClass(class='red'),togleHeading.toggleClass(class='green', force=false)"
+      >
+        Toggle Red
+      </button>
+      <button
+        on="tap:togleHeading.toggleClass(class='green'),togleHeading.toggleClass(class='red', force=false)"
+      >
+        Toggle Green
+      </button>
+      <button on="tap:togleHeading.toggleClass(class='border')">
+        Toggle Border
+      </button>
+    </div>
+    <!-- Ready-made interactivity with AMP components -->
+    <h1>Ready-made interactivity with AMP components</h1>
+    <div>
+      <h1>AMP accordion</h1>
+      <amp-accordion animate>
+        <section>
+          <h2>Section 1</h2>
+          <p>Content in section 1.</p>
+        </section>
+        <section>
+          <h2>Section 2</h2>
+          <div>Content in section 2.</div>
+        </section>
+        <section>
+          <h2>Section 3</h2>
+          <amp-img
+            src="https://amp.dev/static/samples/img/image3.jpg"
+            width="320"
+            height="256"
+            alt="Photo of a squirrel"
+          ></amp-img>
+        </section>
+      </amp-accordion>
+    </div>
+    <!-- Date Picker form -->
+    <h1>Date Picker form</h1>
+    <div>
+      <form
+        method="post"
+        action-xhr="/documentation/examples/api/submit-form-xhr"
+        target=""
+      >
+        <amp-date-picker
+          id="form-picker"
+          type="single"
+          mode="static"
+          layout="fixed-height"
+          height="360"
+          format="YYYY-MM-DD"
+        >
+        </amp-date-picker>
+        <input type="submit" />
+        <div submit-success>Thanks!</div>
+      </form>
+    </div>
+    <h1>Actions and events</h1>
+    <!-- Actions and events -->
+    <div>
+      <form
+        on="submit-success:amp-lightbox-gallery.open(id='squirrel')"
+        method="post"
+        action-xhr="/documentation/examples/api/postal"
+        target=""
+      >
+        <label
+          >Postal code: <input name="code" mask="L0L_0L0" placeholder="A1A 1A1"
+        /></label>
+        <input type="submit" />
+        <div submit-success>
+          <amp-img
+            src="/static/inline-examples/images/squirrel.jpg"
+            width="320"
+            height="256"
+            lightbox
+            id="squirrel"
+            alt="Photo of a squirrel"
+          ></amp-img>
+        </div>
+      </form>
+    </div>
+    <!-- interactivity and data binding with amp-bind -->
+    <h1>Interactivity and data binding with amp-bind</h1>
+    <div>
+      <amp-state id="foo">
+        <script type="application/json">
+          {
+            "bar": "State is set."
+          }
+        </script>
+      </amp-state>
+      <p [text]="foo.bar">No state is set</p>
+      <button on="tap:AMP.setState({})">Set State</button>
+    </div>
+    <h1>State</h1>
+    <!-- State -->
+    <div>
+      <amp-state id="todos">
+        <script type="application/json">
+          ["Learn AMP"]
+        </script>
+      </amp-state>
+
+      <input
+        id="todoInput"
+        type="text"
+        on="input-throttled:AMP.setState({
+                               newTodo: event.value
+                             })"
+      />
+      <button
+        on="tap:AMP.setState({
+                    todos: todos.concat(newTodo)
+                  })"
+      >
+        Add Todo
+      </button>
+      <amp-list
+        [src]="todos"
+        src="amp-state:todos"
+        height="20"
+        items="."
+        [is-layout-container]="true"
+      >
+        <template type="amp-mustache">
+          <li>{{.}}</li>
+        </template>
+      </amp-list>
+    </div>
+    <!-- Client-side rendering in AMP -->
+    <h1>Client-side rendering in AMP</h1>
+    <div>
+      <amp-state id="hikes">
+        <script type="application/json">
+          {
+            "items": [
+              {
+                "title": "Coastal Sights",
+                "city": "San Francisco",
+                "length": "9.3 Miles",
+                "hikeUrl": "/coast",
+                "credit": "Photo by Joseph Barrientos",
+                "imageUrl": "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+                "altDescription": "Photo of the Golden Gate Bridge."
+              },
+              {
+                "title": "Through the Park",
+                "city": "San Francisco",
+                "length": "5 Miles",
+                "hikeUrl": "/park",
+                "credit": "Photo by Claudia Lorusso",
+                "imageUrl": "https://images.unsplash.com/photo-1565086565717-351194b2488b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "altDescription": "Photo of the Academy of Sciences in Golden Gate Park."
+              },
+              {
+                "title": "Historic Brownstones",
+                "city": "New York City",
+                "length": "1.2 Miles",
+                "hikeUrl": "#",
+                "credit": "Photo by Rachel Martin",
+                "imageUrl": "https://images.unsplash.com/photo-1542042238232-3a0b14425b71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+                "altDescription": "Photo of Brownstone building in New York City."
+              },
+              {
+                "title": "Big Apple, Big Bites",
+                "city": "New York City",
+                "length": "3.2 Miles",
+                "hikeUrl": "#",
+                "credit": "Photo by Peter Bond",
+                "imageUrl": "https://images.unsplash.com/photo-1515711127392-4c62a99c3393?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2854&q=80",
+                "altDescription": "Photo of a diner."
+              }
+            ]
+          }
+        </script>
+      </amp-state>
+      <amp-list
+        width="auto"
+        height="300"
+        layout="fixed-height"
+        src="amp-state:hikes"
+        [src]="hikes"
+        binding="always"
+        reset-on-refresh
+      >
+        <template type="amp-mustache">
+          <div class="hike-display">
+            <amp-img
+              src="{{imageUrl}}"
+              width="300"
+              height="225"
+              alt="{{altDescription}}"
+            ></amp-img>
+            <br />
+            <span class="image-credit">{{credit}}</span>
+            <br />
+            <a class="hike-title" href="{{hikeUrl}}">{{title}}</a>
+            <br />
+            <span class="image-credit">{{city}}</span>
+          </div>
+        </template>
+        <div overflow class="list-overflow" style="background-color: red">
+          See more
+        </div>
+      </amp-list>
     </div>
   </body>
 </html>
